@@ -1,5 +1,6 @@
 package lesson15;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.TreeSet;
 
@@ -18,7 +19,37 @@ public class Main1 {
         coins.add(coin4);
         coins.add(coin5);
 
-        for (Coin c: coins){
+        System.out.println("---------- Sorted by nominal ------------");
+        for (Coin c : coins) {
+            System.out.println(c);
+        }
+        System.out.println("---------- Sorted by year ------------");
+        TreeSet<Coin> sortingByYear = new TreeSet<>(new SortByYearComparator());
+        sortingByYear.addAll(coins);
+        for (Coin c : sortingByYear) {
+            System.out.println(c);
+        }
+
+        System.out.println("---------- Sorted by year (reverse)------------");
+        TreeSet<Coin> reverse = new TreeSet<>(new Comparator<Coin>() {
+            @Override
+            public int compare(Coin o1, Coin o2) {
+                if (o1.getYear() != o2.getYear()) {
+                    return o2.getYear() - o1.getYear();
+                }
+                if (o1.getMetall().equals(o2.getMetall())) {
+                    return o2.getMetall().compareTo(o1.getMetall());
+                }
+                if (o1.getNominal() != o2.getNominal()) {
+                    return o2.getNominal() - o1.getNominal(); // 5 - 10 = -5
+                }
+
+                return Double.compare(o2.getDiametr(), o1.getDiametr());
+
+            }
+        });
+        reverse.addAll(coins);
+        for (Coin c : reverse) {
             System.out.println(c);
         }
     }

@@ -1,4 +1,4 @@
-package lesson16Home;
+package lesson15Home;
 
 import java.util.Collection;
 import java.util.Set;
@@ -13,7 +13,7 @@ import java.util.SortedSet;
 public interface SetUtils {
 	
 	/**
-	 * Возвращает отсортированное множество в обратном порядке (по убыванию) как объединение двух коллекций
+	 * * (по убыванию) как объединение двух коллекций
 	 * collection1 - коллекция чисел (Нужно привести каждое число к строковому представлению) и set2 - множество 
 	 * неотсортированных строк
 	 * 
