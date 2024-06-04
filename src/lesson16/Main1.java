@@ -6,10 +6,18 @@ public class Main1 {
         holodilnik.addProduct("Яблоко", 200);
         holodilnik.addProduct("Груша", 800);
         holodilnik.addProduct("Яблоко", 400);
-        holodilnik.addProduct("Слива", 1000);
+        holodilnik.addProduct("Слива", 500);
+        holodilnik.addProduct("Персик", 700);
+        holodilnik.addProduct("Лук", 200);
+        holodilnik.addProduct("Катрошка", 3000);
+        holodilnik.addProduct("Молоко", 1000);
 
         holodilnik.printAllProducts();
         System.out.println("-------------------------------------");
-        holodilnik.printAllProducts2();
+        holodilnik.takeTheProduct("молоко", 500);
+        System.out.println("Остаток продуктов:");
+        holodilnik.printAllProducts();
+
+
     }
 }
